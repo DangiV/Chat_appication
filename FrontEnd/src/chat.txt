@@ -1,0 +1,113 @@
+import {  Grid, Paper } from '@mui/material'
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import CallIcon from '@mui/icons-material/Call';
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import { red } from '@mui/material/colors';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+// import { grid, width } from '@mui/system';
+
+import Typography from '@mui/material/Typography';
+
+const Chat = () => {
+  const paperStyle = { padding: '30px 20px', width: '650px', margin: '0 auto' }
+  const headerStyle = { margin: '8px' }
+  const avatarStyle = { backgroundColor: '#1bbd7e' }
+  const textStyle = { borderRadius: '10px', marginLeft: '5px', width : '570px'}
+  // const Box = { width: '100vw', height: 'auto', paddingBottom: '10px' }
+
+
+  return (
+    <>
+      <h1>Welcome to user chat component</h1>
+
+
+      <Grid >
+        <Paper elevation={20} style={paperStyle}>
+          <Grid align='center'>
+            <Avatar style={avatarStyle}>
+              <ChatBubbleIcon />
+            </Avatar>
+            <h2 style={headerStyle}>Chat</h2>
+
+
+
+
+            <Card sx={{ maxWidth: 'auto' }}>
+              <CardHeader
+                avatar={
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe" >
+                    v
+                  </Avatar>
+                }
+                action={
+                  <IconButton aria-label="settings" >
+                    <VideoCallIcon style={{ paddingRight: "20px" }} />
+                    {/* style={{ paddingLeft: "85px" }} */}
+                    <CallIcon style={{ paddingRight: "20px" }} />
+                    <MoreVertIcon />
+
+                  </IconButton>
+                }
+                title="Vivek"
+                subheader="Online"
+                style={{ backgroundColor: '#0ae2a4' }}
+              />
+              <CardContent sx={{backgroundColor: '#5a9597'}}>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='left'>
+                  Hiii
+                </Typography>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='Right'>
+                  Hello
+                </Typography> 
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='left'>
+                  How are you
+                </Typography> 
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='Right'>
+                  I'm Fine
+                </Typography>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='Right'>
+                  And you
+                </Typography>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='Left'>
+                  I'm also fine
+                </Typography>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='Left'>
+                  From where are you ? 
+                </Typography>
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='Right'>
+                  I'm from Indore
+                </Typography>
+
+
+              </CardContent>
+
+
+              {/* <CardContent style={Box}>
+
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" textAlign='left'>
+                  Hiii
+                </Typography>
+                <input type="text" placeholder='Message' style={textStyle}  />
+                <Button variant="success"><SendIcon /></Button>
+              </CardContent> */}
+
+
+            </Card>
+          </Grid>
+        </Paper>
+      </Grid>
+
+    </>
+  )
+}
+
+export default Chat
