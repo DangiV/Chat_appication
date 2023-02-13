@@ -18,8 +18,7 @@ const Request = () => {
   const headerStyle = { margin: "8px" };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
 
-  let diffTost = "";
-  let deleteTost = "";
+
 
 
   const [value, setValue] = useState([]);
@@ -30,7 +29,7 @@ const Request = () => {
 
   const fetchrequest = async () => {
     let data = await postman("post", "/showRequest");
-    console.log(data);
+    //console.log(data);
     setValue(data.data.data);
   };
 
@@ -42,23 +41,8 @@ const Request = () => {
     };
 
     let datauser = await postman("post", "/AcceptRequest", ids);
-    console.log("user dlelte data", datauser);
+    //console.log("user accept data", datauser);
 
-
-
-    // const NewUserData = value.filter((NewEle) => {
-    //   return NewEle.id !== id;
-    // });
-    
-    // diffTost = () => {
-    //   toast.success("Request Accepted !", {
-    //     position: "top-center",
-    //     autoClose: 2000,
-    //     theme: "light",
-    //   });
-    // };
-
-    // setValue(NewUserData);
   };
 
   const DeleteReq = async (id) => {
@@ -67,32 +51,20 @@ const Request = () => {
     };
 
     let datauser = await postman("post", "/DeleteRequest", ids);
-    console.log("user dlelte data", datauser);
+    //console.log("user dlelte data", datauser);
     fetchrequest();
 
-    // const NewUserData = value.filter((NewEle) => {
-    //   return NewEle.id !== id;
-    //});
-    //deleteTost = () => {
-    //   toast.error('Request Deleted !', {
-    //       position: "top-center",
-    //       autoClose: 2000,
-    //       theme: "colored",
-    //   });
-    // }
-
-    // setValue(NewUserData);
+ 
   };
 
   return (
     <>
       <h1>Welcome User request component</h1>
-      <Grid>
-        {value.length > 0
-          ? value.map((val) => {
-              console.log("valllllllllll", val);
+      {value.length > 0
+          ? value.map((val, index) => {
+              //console.log("valllllllllll", val);
               return (
-                <>
+                <div key={index}>
                 
                   <h1>{val.sendername}</h1>
                   <Button
@@ -115,10 +87,12 @@ const Request = () => {
                   >
                     Delete
                   </Button>
-                </>
+                </div>
               );
             })
           : ""}
+      {/* <Grid>
+       
 
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
@@ -126,7 +100,7 @@ const Request = () => {
               <RequestPageIcon />
             </Avatar>
             <h2 style={headerStyle}>Friend-Request</h2>
-            {/* <Fade left>
+            <Fade left>
             {
                             value.map((curEle) => {
                                 return (
@@ -157,10 +131,13 @@ const Request = () => {
                                 )
                             })
                         }
-            </Fade> */}
+            </Fade>
           </Grid>
         </Paper>
-      </Grid>
+      </Grid> */}
+
+
+      
       <ToastContainer />
     </>
   );

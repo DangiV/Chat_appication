@@ -29,7 +29,7 @@ const Signup = () => {
 
     try {
       let details = await postman("post","/Signin",formValues)
-      // console.log("Details of user login is : - " , details.data.token);
+      // //console.log("Details of user login is : - " , details.data.token);
       alert("Login successfully")
       localStorage.setItem("login", details.data.token)
       navigate('/Deshboard');
@@ -46,9 +46,9 @@ const Signup = () => {
     if(login){
       navigate('/Deshboard')
     }
-    // console.log(formErrors);
+    // //console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
+      //console.log(formValues);
     }
   }, [formErrors]);
   const validate = (values) => {

@@ -20,6 +20,10 @@ const AdminSchema = mongoose.Schema({
     required: true,
     minimum: 5,
   },
+  chatId: {
+    type: String,
+ 
+  },
   email: {
     type: String,
     unique: [true, "email already exists in database!"],

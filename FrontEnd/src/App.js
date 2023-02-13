@@ -31,10 +31,10 @@ function App() {
           <Route path='/Deshboard' element={<ProRoute Component={Home} />} />
           <Route path='/Signup' element={<Signup />} />
           <Route path='/Sigin' element={<SignIn />} />
+          <Route path='/Deshboard' element={<ProRoute Component ={Deshboard} />} />
           <Route path='/User-List' element={<ProRoute Component={UserList} />} />
           <Route path='/Friends' element={<ProRoute Component={Friend} />} />
           <Route path='/Request' element={<ProRoute Component ={Request} />} />
-          <Route path='/Deshboard' element={<ProRoute Component ={Deshboard} />} />
           <Route path='/profile' element={<ProRoute Component={Profile} />} />
           <Route path='/chat' element={<ProRoute Component={Chat} />} />
         </Routes>

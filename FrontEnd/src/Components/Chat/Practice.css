@@ -18,6 +18,8 @@ img {
     border-bottom: none;
     display: inline-block;
     background-color: #22075e;
+    /* background: linear-gradient(0deg, rgba(0,229,232,1) 0%, rgba(53,126,184,1) 96%, rgba(253,187,45,1) 100%); */
+
 }
 
 .msg-header-img {
@@ -29,7 +31,7 @@ img {
 }
 
 .active {
-    width: 120px;
+    /* width: 120px; */
     float: left;
     margin-top: 10px;
 
@@ -124,11 +126,20 @@ img {
     width: 130px;
     float: right;
 }
+.timenewse{
+    color: #777;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0 ;
+    width: 130px;
+    float: left;
+}
 
 
 .outgoing-chats {
     overflow: hidden;
     margin: 0px 8px;
+    background-color: 'pink';
 }
 
 .outgoing-chat-msg p {
@@ -209,10 +220,3 @@ img {
     border-radius: 20px;
 
 } 
-
-
-
-
-
-
-

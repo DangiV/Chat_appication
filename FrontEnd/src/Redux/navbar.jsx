@@ -9,7 +9,7 @@ export const slice =new createSlice({
     reducers:
     {
      setpage:(state ,payload)=>{
-        console.log("paylo",payload)
+        //console.log("paylo",payload)
         state.currentpage=payload.payload
      }
     }

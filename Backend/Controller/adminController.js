@@ -8,10 +8,10 @@ import bcrypt from 'bcrypt'
 
 export const AdminSignup = async (req, res) => {
     const { fname, lname, number, email, password } = req.body;
-    // console.log(req.body.password)
+    // //console.log(req.body.password)
     const hashPassword = await bcrypt.hash(req.body.password, 10)
 
-    // console.log(req.body)
+    // //console.log(req.body)
     try {
         const avilable = await AdminModel.findOne({ email: email })
         if (avilable) {
@@ -22,7 +22,7 @@ export const AdminSignup = async (req, res) => {
             res.status(200).json({"message":"User registered successfully"})
         }
     } catch (error) {
-        console.log(error);
+        //console.log(error);
     }
 }
 
@@ -35,7 +35,7 @@ export const AdminSignin = async (req,res) =>{
 
     try {
         const validUser = await AdminModel.findOne({email : email})
-        // console.log(password,  validUser.password)
+        // //console.log(password,  validUser.password)
         const password1 = await bcrypt.compare(password,  validUser.password)
         {
             if(password1){
@@ -54,6 +54,6 @@ export const AdminSignin = async (req,res) =>{
             }
         }
     } catch (error) {
-        console.log(error);
+        //console.log(error);
     }
 }

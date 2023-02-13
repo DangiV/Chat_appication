@@ -8,7 +8,7 @@ import UserList from '../UserList/UserList';
 
 function Home() {
   const state = useSelector(state => state.nav.currentpage)
-  // console.log("state value ", state);
+  // //console.log("state value ", state);
 
   return (
     <>

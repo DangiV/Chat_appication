@@ -39,7 +39,7 @@ const Signup = () => {
     setIsSubmit(true);
     try {
       let data = await postman("post", "/Signup", formValues);
-      console.log(data);
+      //console.log(data);
       alert("User registeed successfully");
 
       //  formValues("");
@@ -50,9 +50,9 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    console.log(formErrors);
+    //console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      // console.log(formValues);
+      // //console.log(formValues);
     }
   }, [formErrors]);
   const validate = (values) => {

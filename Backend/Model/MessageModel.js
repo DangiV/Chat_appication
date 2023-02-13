@@ -12,10 +12,10 @@ const AdminSchema = mongoose.Schema({
    message :{
     type: String , 
    },
-   time:{
-    type : Date,
-    required : true,
-   },
+//    time:{
+//     type : Date,
+//     required : true,
+//    },
 
    status :{
     type: Boolean,
@@ -23,6 +23,6 @@ const AdminSchema = mongoose.Schema({
    }
 }) 
 
-const AdminModel = mongoose.model("Messages", AdminSchema);
+const messageModel = mongoose.model("Messages", AdminSchema);
 
-export default AdminModel;
+export default messageModel;

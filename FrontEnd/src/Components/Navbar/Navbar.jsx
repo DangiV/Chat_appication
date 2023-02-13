@@ -33,7 +33,7 @@ function Navbar() {
     localStorage.clear();
   };
   const state = useSelector((state) => state);
-  // console.log("erferf", state)
+  // //console.log("erferf", state)
   const [value, setValue] = useState();
   const [curr, setcurr] = useState();
   const dispatch = useDispatch();

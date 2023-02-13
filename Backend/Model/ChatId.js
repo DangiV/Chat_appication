@@ -10,4 +10,4 @@ const ChatId = mongoose.Schema({
 
 const chatId = mongoose.model("Chat", ChatId);
 
-export default chatId;s
+export default chatId;

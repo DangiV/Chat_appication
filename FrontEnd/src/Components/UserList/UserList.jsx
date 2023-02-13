@@ -25,19 +25,19 @@ const UserList = () => {
 
   const fetchlist = async () => {
     let data = await postman("get", "/getalluser");
-    console.log("user data", data.data.data);
+    //console.log("user data", data.data.data);
 
     setValue(data.data.data);
   };
 
   const sendlReq = async (id, name, surname) => {
-    console.log(id);
+    //console.log(id);
     const ids = {
       sendid: id,
       name: name + " " + surname,
     };
     let data = await postman("post", "/sendeRequest", ids);
-    console.log("user data is avilable here", data);
+    //console.log("user data is avilable here", data);
     fetchlist();
   };
 
@@ -72,9 +72,9 @@ const UserList = () => {
             <h2 style={headerStyle}>User-List</h2>
             <Fade left>
               {value.length > 0
-                ? value.map((val) => {
+                ? value.map((val, ind) => {
                     return (
-                      <Card sx={{ maxWidth: 430 }}>
+                      <Card key={ind} sx={{ maxWidth: 430 }}>
                         <CardHeader
                           action={
                             <IconButton aria-label="settings">
